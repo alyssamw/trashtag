@@ -5,10 +5,10 @@ const SimpleComponent = ({ text }) => <div>{text}</div>;
 
 class Map extends Component {
     static defaultProps = {
-        text: "Kreyser Avrora",
+        text: "LAHacks",
         center: {
-          lat: 59.95,
-          lng: 30.33
+          lat: 34.0689,
+          lng: 118.4452
         },
         zoom: 11
     };

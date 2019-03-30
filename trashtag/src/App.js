@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Map from './components/Map.js';
+import Upload from './pages/Upload.js';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Map/>
+        <Upload/>
       </div> 
     );
   }
