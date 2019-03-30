@@ -5,6 +5,7 @@ const SimpleComponent = ({ text }) => <div>{text}</div>;
 
 class Map extends Component {
     static defaultProps = {
+        text: "Kreyser Avrora",
         center: {
           lat: 59.95,
           lng: 30.33
@@ -21,9 +22,9 @@ class Map extends Component {
               defaultZoom={this.props.zoom}
             >
               <SimpleComponent
-                lat={59.955413}
-                lng={30.337844}
-                text={'Kreyser Avrora'}
+                lat={this.props.center.lat}
+                lng={this.props.center.lng}
+                text={this.props.text}
               />
             </GoogleMapReact>
           </div>
