@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import Home from './pages/Home/Home'
 import Map from './components/Map.js';
+import Post from './components/Post/Post';
+import Feed from './pages/Feed/Feed';
 import './App.css';
 
 class App extends Component {
@@ -22,7 +24,7 @@ class App extends Component {
             Learn React
           </a>
         </header> */}
-        <Home/>
+        <Feed/>
       </div>
     );
   }
