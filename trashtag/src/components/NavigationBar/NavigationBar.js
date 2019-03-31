@@ -9,7 +9,7 @@ class NavigationBar extends Component {
 			<nav className="navbar navbar-expand-lg navbar-light bg-light">
 				<ul className="container">
 					<NavDropdown className="settings">
-						<a className="dropdown-item" href="/">leaderboard</a>
+						<Link className="dropdown-item" to="/leaderboard">leaderboard</Link>
 						<a className="dropdown-item" href="/">settings</a>
 					</NavDropdown>
 

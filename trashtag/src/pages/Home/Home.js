@@ -3,12 +3,14 @@ import './Home.css';
 import Feed from '../Feed/Feed';
 import { BrowserRouter as Router, Route, Redirect, Link } from "react-router-dom";
 import FacebookLogin from '../../components/FacebookLoginButton/FacebookLoginButton';
+import Leaderboard from '../Leaderboard/Leaderboard.js'
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
             loginStatus: false,
+            users: [],
         }
     }
 
@@ -46,6 +48,7 @@ class Home extends Component {
             this.setState({
                 // username: resultObject.user.name
                 loginStatus: true,
+                users: [...this.state.users, resultObject.user.name],
             });
         } else {
             this.setState({
@@ -76,7 +79,7 @@ class Home extends Component {
                         )
                 )} />
                 <Route path="/feed" component={Feed} />
-
+                <Route path="/leaderboard" render={(props) => <Leaderboard {...props} userList={this.state.users}/>}/>
             </Router>
         );
     }

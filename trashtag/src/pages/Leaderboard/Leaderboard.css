@@ -1,0 +1,23 @@
+.leaderboard-wrapper {
+    width: 45vw;
+    height: 35vw;
+    margin: 6vw auto;
+    border-radius: 10px;
+    font-size: 11pt;
+    text-align: left;
+    position: relative;
+    border: 3px solid green;
+}
+
+.title {
+	font-size: 50px;
+	font-weight: bold;
+    margin-top: 0px;
+    margin-left: 30%;
+}
+
+.list-item {
+	font-size: 30px;
+	font-weight: bold;
+	margin-left: 80px;
+}
