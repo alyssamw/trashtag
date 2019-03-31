@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from 'react';
-import { render } from "react-dom";
-import request from "superagent";
-import NavigationBar from '../../components/NavigationBar/NavigationBar.js';
-import Post from '../../components/Post/Post.js';
-import base, { firebaseApp } from '../../base';
+import React, { Component } from 'react';
+import NavigationBar from '../../components/NavigationBar/NavigationBar';
+import Post from '../../components/Post/Post';
+import { firebaseApp } from '../../base';
+import Upload from '../Upload/Upload.js';
+import Map from '../../components/Map/Map';
 import './Feed.css'
 
 let referenceToOldestKey = '';
@@ -119,7 +119,8 @@ class Feed extends Component {
         return (
             <div>
                 <NavigationBar />
-                <hr />
+                <Map/>
+                <Upload/>
                 {posts.map((singlePost, i) =>
                     <Post
                         key={i}
