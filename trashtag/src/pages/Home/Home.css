@@ -18,10 +18,19 @@
 
 .title {
     color: #245629;
-    font-size: 20vw;
-    height: 8vw;
+    font-size: 30vh;
+    position: absolute;
+    margin-top: 25vh;
 }
 
-.caption {
-    font-size: 3vw;
+.subtitle {
+    font-size: 5vh;
+    margin-top: 80vh;
+    margin-bottom: 0;
+    position: absolute;
+}
+
+.facebook-login {
+    margin-top: 100vh;
+    position: absolute;
 }

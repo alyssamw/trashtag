@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Feed from './pages/Feed/Feed';
+import Feed from './pages/Feed/Feed'
+import Home from './pages/Home/Home';
 import './App.css';
 
 class App extends Component {
@@ -20,9 +21,7 @@ class App extends Component {
             Learn React
           </a>
         </header> */}
-        <Map
-        center={[39,-98]}/>
-        <Feed/>
+        <Home/>
       </div>
     );
   }

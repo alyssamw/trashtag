@@ -126,6 +126,7 @@ class Feed extends Component {
                         key={i}
                         location={singlePost.location}
                         caption={singlePost.caption}
+                        photo={"trash" + (i + 1)}
                     />
                 )}
 

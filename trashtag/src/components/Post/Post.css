@@ -58,11 +58,16 @@
     
 }
 
-.photo {
-    background-color: white;
+.photo-wrapper {
     /* box-shadow: 0px 4px 4px rgba(0,0,0,0.25), 0px 4px 4px rgba(0,0,0,0.25); */
     border-radius: 10px;
     width: 67%;
+    height: 100%;
+}
+
+.photo {
+    border-radius: 10px;
+    width: 100%;
     height: 100%;
 }
 
