@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import ReactDOM from 'react-dom';
 import './NavigationBar.css';
 import NavDropdown from './NavDropdown.js'
+=======
+import { Navbar, Nav, Button, Form, InputGroup, FormControl } from 'react-bootstrap';
+import ReactDOM from 'react-dom';
+import './NavigationBar.css';
+>>>>>>> 4a4515d6900a9d3a366328387580e66e008e7e25
 
 class NavigationBar extends Component {
 	render() {
 		return (
+<<<<<<< HEAD
 			<nav className="navbar navbar-expand-lg navbar-light bg-light">
 				<ul className="container">
 					<NavDropdown className="settings">
@@ -21,6 +28,11 @@ class NavigationBar extends Component {
           			</form>
           		</ul>
       		</nav>
+=======
+  				<Navbar fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
+  					<Navbar.Brand href="#">#trashtag</Navbar.Brand>
+  				</Navbar>
+>>>>>>> 4a4515d6900a9d3a366328387580e66e008e7e25
 		);
 	}
 }

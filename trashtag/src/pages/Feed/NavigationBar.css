@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .navbar {
 	display: flex;
   	justify-content: space-around;
@@ -16,4 +17,15 @@
 
 .form-control {
 	border: 1px solid #73AD21 !important;
+=======
+.navbar-brand {
+	font-size: 30px;
+}
+
+.status {
+	width: 100%;
+	border: 5px solid green;
+	padding: 25px;
+	margin: 2px;
+>>>>>>> 4a4515d6900a9d3a366328387580e66e008e7e25
 }

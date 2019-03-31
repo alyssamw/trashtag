@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Home.css';
 import Feed from '../Feed/Feed';
-import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import FacebookLogin from '../../components/FacebookLoginButton/FacebookLoginButton';
 
 class Home extends Component {
