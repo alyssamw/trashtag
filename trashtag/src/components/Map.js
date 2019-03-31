@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import Marker from './Marker'
 import base, { firebaseApp} from '../base';
+import {dummylatlongs} from './dummylatlongs'
 
 const SimpleComponent = ({ text }) => <div>{Marker}</div>;
 
@@ -21,6 +22,23 @@ class Map extends Component {
         text: "LAHacks",
         zoom: 11
     };
+    dummyLoadMarkers = () => {
+      // fetch(dummylatlongs)
+      // .then(results => {
+      //   return results.json();
+      // })
+      // .then(data => {
+        this.setState({place_position: [...this.state.place_position, ...dummylatlongs.places]})
+    //   })
+    //   .catch((error) => { 
+    //     console.log("Something bad happened");
+    //     console.log(error.message);
+    //     this.setState({
+    //         error: error.message,
+    //         isLoading: false,
+    //     });
+    // });
+    }
     loadMarkers= () =>
     {
       this.setState({ isLoading: true }, () => {
@@ -64,7 +82,8 @@ class Map extends Component {
     }
    
     componentDidMount() {
-      this.loadMarkers()
+      //this.loadMarkers()
+      this.dummyLoadMarkers();
     }
   
     render() {
@@ -80,9 +99,9 @@ class Map extends Component {
             {this.state.place_position.map((place, i) =>(
                 <Marker
                 key = {i}
-                text={place.name}
-                lat={place.geometry.location.lat}
-                lng={place.geometry.location.lng}
+                text=""
+                lat={place.lat}
+                lng={place.lng}
                 />
             ))}
               
