@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const img = require('../../src/icon.png');
+const img = require('../../icon.png');
 const Wrapper = styled.div`
   position: absolute;
   top: 50%;

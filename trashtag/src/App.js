@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Feed from './pages/Feed/Feed';
+import Map from './components/Map/Map.js'
 import './App.css';
 
 class App extends Component {
