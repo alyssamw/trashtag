@@ -5,22 +5,20 @@ const SimpleComponent = ({ text }) => <div>{text}</div>;
 
 class Map extends Component {
     static defaultProps = {
-        text: "Kreyser Avrora",
-        center: {
-          lat: 59.95,
-          lng: 30.33
-        },
+        text: "LAHacks",
         zoom: 11
     };
     render() {
+        {console.log(process.env.REACT_APP_GCP_KEY)}
         return (
           // Important! Always set the container height explicitly
           <div style={{ height: '100vh', width: '100%' }}>
             <GoogleMapReact
-              bootstrapURLKeys={{ key: "AIzaSyDU40XGqr3SR80ECP0POFrKL9WNZmHzhO0" }}
-              defaultCenter={this.props.center}
+              bootstrapURLKeys={{ key: process.env.REACT_APP_GCP_KEY }}
+              center={this.props.center}
               defaultZoom={this.props.zoom}
             >
+              
               <SimpleComponent
                 lat={this.props.center.lat}
                 lng={this.props.center.lng}
