@@ -1,6 +1,4 @@
-.photo {
-	border-radius: 50%;
-	height: 72;
-	margin-right: 20;
-	width: 72;
+.loading-sign {
+	font-weight: bold;
+	font-size: 20px;
 }
