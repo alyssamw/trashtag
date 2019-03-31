@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './Upload.css';
 import Map from '../components/Map.js';
-import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Form from 'react-bootstrap/Form';
 import Button from '@material-ui/core/Button';
@@ -111,7 +109,7 @@ class Upload extends Component {
                     <br/>
                     <FormGroup row className="formRow" style={{display: "flex", width:"100%"}}>
                         <TextField id="address" placeholder="Manually type in location or " style={{width:"60%"}}/>
-                        {/* <div style={{flex: 0.05}}></div> */}
+                        <div style={{flex: 0.05}}></div>
                         <FormControlLabel
                             control={
                                 <Checkbox
