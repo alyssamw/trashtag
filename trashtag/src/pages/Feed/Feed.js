@@ -119,7 +119,7 @@ class Feed extends Component {
         return (
             <div>
                 <NavigationBar />
-                <Map/>
+                <Map center={[34.07, -118.438]}/>
                 <Upload/>
                 {posts.map((singlePost, i) =>
                     <Post
