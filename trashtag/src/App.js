@@ -20,6 +20,8 @@ class App extends Component {
             Learn React
           </a>
         </header> */}
+        <Map
+        center={[39,-98]}/>
         <Feed/>
       </div>
     );
