@@ -79,6 +79,18 @@
     height: auto;
 }
 
+.clean-button {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid green;
+    font-weight: bold;
+    color: green;
+    border-radius: 10px;
+    margin-left: 84%;
+    margin-top: 0%;
+    position: absolute;
+}
+
 @media only screen and (max-width: 860px) {
     .location {
         font-size: 1.4vw;

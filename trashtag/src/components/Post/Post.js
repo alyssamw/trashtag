@@ -17,6 +17,7 @@ class Post extends Component {
                 <div className="Post">
                     <div className="location">
                         <p className="location-text">{this.state.location}</p>
+                        <button className="clean-button">cleaned it!</button>
                     </div>
                     <div className="content">
                         <div className="caption">
@@ -24,7 +25,6 @@ class Post extends Component {
                         </div>
                         <div className="photo"></div>
                     </div>
-
                     <div className="likes">
                         <img className="like-icon" src={like} alt="Like" />
                         <div className="like-count"></div>
