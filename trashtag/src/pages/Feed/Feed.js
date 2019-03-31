@@ -19,8 +19,6 @@ class Feed extends Component {
             posts: [],
         };
 
-        
-
         /* Bind scroll event handler. */
         window.onscroll = () => {
             const {
@@ -129,25 +127,6 @@ class Feed extends Component {
                         caption={singlePost.caption}
                     />
                 )}
-                {/* {posts.map(post => (
-                    <Fragment key={post.location}>
-                        <hr />
-                        <div style={{ display: 'flex' }}>
-                            <img
-                                class='photo'
-                                alt={user.username}
-                                src={user.photo}
-                            />
-                            <div>
-                                <h2 style={{ marginTop: 0 }}>
-                                    @{user.username}
-                                </h2>
-                                <p>Name: {user.name}</p>
-                                <p>Email: {user.email}</p>
-                            </div>
-                        </div>
-                    </Fragment>
-                ))} */}
                 
                 {error &&
                     <div style={{ color: '#900' }}>
