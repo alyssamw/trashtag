@@ -1,6 +1,6 @@
 .photo {
-	borderRadius: 50%;
+	border-radius: 50%;
 	height: 72;
-	marginRight: 20;
+	margin-right: 20;
 	width: 72;
 }
