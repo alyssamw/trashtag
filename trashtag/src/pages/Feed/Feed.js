@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from 'react';
-import { render } from "react-dom";
-import request from "superagent";
+import React, { Component } from 'react';
 import NavigationBar from './NavigationBar.js';
 import Post from '../../components/Post/Post';
-import base, { firebaseApp } from '../../base';
+import { firebaseApp } from '../../base';
+import Upload from '../Upload/Upload.js';
+import Map from '../../components/Map/Map';
 
 let referenceToOldestKey = '';
 
@@ -118,8 +118,8 @@ class Feed extends Component {
         return (
             <div>
                 <NavigationBar />
-                <p>scroll to load more</p>
-                <hr />
+                <Map/>
+                <Upload/>
                 {posts.map((singlePost, i) =>
                     <Post
                         key={i}
@@ -134,7 +134,7 @@ class Feed extends Component {
                     </div>
                 }
                 {isLoading &&
-                    <div>loading...</div>
+                    <div style={{textAlign: "left"}}>loading...</div>
                 }
                 {!hasMore &&
                     <div>end</div>
