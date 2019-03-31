@@ -1,0 +1,27 @@
+#home-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #e0f1e1;
+}
+.Home {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+}
+
+.title {
+    color: #245629;
+    font-size: 20vw;
+    height: 8vw;
+}
+
+.caption {
+    font-size: 3vw;
+}

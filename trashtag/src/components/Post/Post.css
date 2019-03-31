@@ -1,0 +1,74 @@
+.Post {
+    background-color: #E1EDE0;
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.25), 0px 4px 4px rgba(0,0,0,0.25);
+    width: 500px;
+    height: 400px;
+    margin: 2vw auto;
+    border-radius: 10px;
+    font-size: 10pt;
+    text-align: left;
+    position: relative;
+}
+
+.location {
+    background-color: white;
+    /* box-shadow: 0px 4px 4px rgba(0,0,0,0.25), 0px 4px 4px rgba(0,0,0,0.25); */
+    border-radius: 10px;
+    width: 90%;
+    height: 40px;
+    margin: 5% 5%;
+    /* padding: 2px; */
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+.location p {
+    padding: 15px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    height: 65%;
+    margin: 18% 5%;
+    position: absolute;
+}
+
+.caption {
+    background-color: white;
+    /* box-shadow: 0px 4px 4px rgba(0,0,0,0.25), 0px 4px 4px rgba(0,0,0,0.25); */
+    border-radius: 10px;
+    width: 30%;
+    height: 100%;
+    font-size: 10pt;
+    display: flex;
+    align-items: center;
+}
+
+.caption p {
+    padding: 15px;
+}
+
+.photo {
+    background-color: white;
+    /* box-shadow: 0px 4px 4px rgba(0,0,0,0.25), 0px 4px 4px rgba(0,0,0,0.25); */
+    border-radius: 10px;
+    width: 67%;
+    height: 100%;
+}
+
+.likes {
+    text-align: left;
+    margin: 72% 5%;
+    width: 90%;
+    height: auto;
+    position: absolute;
+}
+
+.like-icon {
+    width: 7%;
+    height: auto;
+}
