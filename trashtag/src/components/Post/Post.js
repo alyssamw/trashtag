@@ -17,7 +17,7 @@ class Post extends Component {
                 <div className="Post">
                     <div className="location">
                         <p className="location-text">{this.state.location}</p>
-                        <button className="clean-button">cleaned it!</button>
+                        <button className="clean-button">CLEANED IT!</button>
                     </div>
                     <div className="content">
                         <div className="caption">

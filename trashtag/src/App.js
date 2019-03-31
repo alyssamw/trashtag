@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Feed from './pages/Feed/Feed';
-import Upload from './pages/Upload.js'
 import './App.css';
 
 class App extends Component {
@@ -21,7 +20,7 @@ class App extends Component {
             Learn React
           </a>
         </header> */}
-        <Upload/>
+        <Feed/>
       </div>
     );
   }

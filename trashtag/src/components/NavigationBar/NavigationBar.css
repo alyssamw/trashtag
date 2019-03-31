@@ -7,16 +7,26 @@
 }
 
 .navbar-brand {
-	color: green !important;
+	color: #245629 !important;
 	font-weight: bold;
 	font-size: 40px !important;
 }
 
 .dropdown {
 	border-radius: 10px;
-  	border: 1px solid #73AD21;
+  	border: 1px solid #245629;
 } 
 
 .form-control {
-	border: 1px solid #73AD21 !important;
+	border: 1px solid #245629 !important;
+}
+
+.btn {
+	border: 1px solid #245629 !important;
+	color:#245629 !important;
+}
+
+.btn:hover{
+	background-color: #245629 !important;
+	color:white !important;
 }
