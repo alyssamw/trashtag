@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import Marker from './Marker'
-import base, { firebaseApp} from '../base';
+import { firebaseApp} from '../base';
 import {dummylatlongs} from './dummylatlongs'
 
 const SimpleComponent = ({ text }) => <div>{Marker}</div>;
