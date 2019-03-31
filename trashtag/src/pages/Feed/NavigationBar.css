@@ -1,0 +1,10 @@
+.navbar-brand {
+	font-size: 30px;
+}
+
+.status {
+	width: 100%;
+	border: 5px solid green;
+	padding: 25px;
+	margin: 2px;
+}
