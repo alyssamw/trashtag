@@ -5,8 +5,6 @@ import { firebaseApp } from '../../base';
 import { dummylatlongs } from './dummylatlongs'
 import './Map.css';
 
-const SimpleComponent = ({ text }) => <div>{Marker}</div>;
-
 class Map extends Component {
     constructor(props) {
       super(props);
@@ -24,21 +22,7 @@ class Map extends Component {
         zoom: 11
     };
     dummyLoadMarkers = () => {
-      // fetch(dummylatlongs)
-      // .then(results => {
-      //   return results.json();
-      // })
-      // .then(data => {
         this.setState({place_position: [...this.state.place_position, ...dummylatlongs.places]})
-    //   })
-    //   .catch((error) => { 
-    //     console.log("Something bad happened");
-    //     console.log(error.message);
-    //     this.setState({
-    //         error: error.message,
-    //         isLoading: false,
-    //     });
-    // });
     }
     loadMarkers= () =>
     {
