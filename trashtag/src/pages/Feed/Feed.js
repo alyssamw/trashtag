@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { render } from "react-dom";
 import request from "superagent";
-import NavigationBar from './NavigationBar.js';
-import Post from '../../components/Post/Post';
+import NavigationBar from '../../components/NavigationBar/NavigationBar.js';
+import Post from '../../components/Post/Post.js';
 import base, { firebaseApp } from '../../base';
+import './Feed.css'
 
 let referenceToOldestKey = '';
 
@@ -118,7 +119,6 @@ class Feed extends Component {
         return (
             <div>
                 <NavigationBar />
-                <p>scroll to load more</p>
                 <hr />
                 {posts.map((singlePost, i) =>
                     <Post
@@ -134,7 +134,7 @@ class Feed extends Component {
                     </div>
                 }
                 {isLoading &&
-                    <div>loading...</div>
+                    <div className="loading-sign">loading...</div>
                 }
                 {!hasMore &&
                     <div>end</div>
