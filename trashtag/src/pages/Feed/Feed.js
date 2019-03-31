@@ -14,7 +14,7 @@ class Feed extends Component {
       isLoading: false,
       users: [],
     };
-
+    
     /* Bind scroll event handler. */
     window.onscroll = () => {
       const {
@@ -29,7 +29,7 @@ class Feed extends Component {
       /* If nothing left to load, leave. */
       if (error || isLoading || !hasMore)
         return;
-
+      
       /* Check that page is not at bottom. */
       if (window.innerheight + document.documentElement.scrollTop === document.documentElement.offsetheight) {
         loadUsers();
@@ -84,44 +84,33 @@ class Feed extends Component {
       users,
     } = this.state;
 
-    return (
-          <div>
-            <NavigationBar />
-            <p>scroll to load more</p>
-            {users.map(user => (
-                <Fragment key={user.username}>
-                  <hr />
-                  <div style={{ display: 'flex' }}>
-                      <img
-                        class='photo'
-                        alt={user.username}
-                        src={user.photo}
-                      />
-                      <div>
-                        <h2 style={{ marginTop: 0 }}>
-                            @{user.username}
-                        </h2>
-                        <p>Name: {user.name}</p>
-                        <p>Email: {user.email}</p>
-                      </div>
-                  </div>
-                </Fragment>
-            ))}
-            <hr />
-            {error &&
-                <div style={{ color: '#900' }}>
-                  {error}
-                </div>
-            }
-            {isLoading &&
-                <div>loading...</div>
-            }
-             {!hasMore &&
-               <div>end</div>
-            }
-          </div>
-    );
-  }
+        return (
+            <div>
+                <NavigationBar />
+                <p>scroll to load more</p>
+                <hr />
+                {posts.map((singlePost, i) =>
+                    <Post
+                        key={i}
+                        location={singlePost.location}
+                        caption={singlePost.caption}
+                    />
+                )}
+                
+                {error &&
+                    <div style={{ color: '#900' }}>
+                        {error}
+                    </div>
+                }
+                {isLoading &&
+                    <div>loading...</div>
+                }
+                {!hasMore &&
+                    <div>end</div>
+                }
+            </div>
+        );
+    }
 }
 
 export default Feed;
