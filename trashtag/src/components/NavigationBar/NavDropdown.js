@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class NavDropdown extends React.Component {
+class NavDropdown extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -22,7 +22,7 @@ class NavDropdown extends React.Component {
 			<button className="nav-item dropdown">
 				<a className="nav-link dropdowdn-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" area-haspopup="true" aria-expanded="false" onClick={(e) => {this.showDropdown(e)}}>
 					<img src={require('./menu.jpg')} width="22
-					" height="22"></img>
+					" height="22" alt="Menu" />
 				</a>
 
 				<div className={classDropdownMenu} aria-labelledby="navbarDropdown">
