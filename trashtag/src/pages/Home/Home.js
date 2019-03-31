@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Home.css';
 import Feed from '../Feed/Feed';
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect, Link } from "react-router-dom";
 import FacebookLogin from '../../components/FacebookLoginButton/FacebookLoginButton';
 
 class Home extends Component {
@@ -70,6 +70,7 @@ class Home extends Component {
                                     <div className="facebook-login">
                                         <FacebookLogin onLogin={this.onFacebookLogin}/>
                                     </div>
+                                    <Link className="skip" to="/feed">Skip</Link>
                                 </div >
                             </div>
                         )

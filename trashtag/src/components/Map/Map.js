@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import Marker from './Marker'
-import { firebaseApp } from '../base';
+import { firebaseApp } from '../../base';
 import { dummylatlongs } from '../dummylatlongs'
+import './Map.css';
 
 const SimpleComponent = ({ text }) => <div>{Marker}</div>;
 
@@ -90,7 +91,7 @@ class Map extends Component {
       const { places } = this.state; // Copy the places array
         return (
           // Important! Always set the container height explicitly
-          <div style={{ height: '100vh', width: '100%' }}>
+          <div className="map-wrapper">
             <GoogleMapReact
               bootstrapURLKeys={{ key: process.env.REACT_APP_GCP_KEY }}
               center={this.props.center}
