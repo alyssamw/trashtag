@@ -66,8 +66,10 @@ class Home extends Component {
                             <div id="home-wrapper">
                                 <div className="Home">
                                     <p className="title">#trashtag</p>
-                                    <p className="caption">make the world a better place, one trash at a time.</p>
-                                    <FacebookLogin onLogin={this.onFacebookLogin}/>
+                                    <p className="subtitle">make the world a better place, one trash at a time.</p>
+                                    <div className="facebook-login">
+                                        <FacebookLogin onLogin={this.onFacebookLogin}/>
+                                    </div>
                                 </div >
                             </div>
                         )

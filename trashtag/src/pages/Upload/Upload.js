@@ -22,9 +22,12 @@ class Upload extends Component {
                 lng: -118.4452
             },
             locationHelper: "",
+            image: null,
+            url: ''
         };
         this.initMap = this.initMap.bind(this);
         this.initMap();
+        this.handleChange = this.handleChange.bind(this);
     }
 
     componentDidMount = () => {
@@ -101,6 +104,13 @@ class Upload extends Component {
         )
     }
 
+    handleChange = e => {
+        if (e.target.files[0]) {
+            const image = this.target.files[0];
+            this.setState(() => ({image}));
+        }
+    }
+
     renderForm = () => {
         return (
             <MuiThemeProvider theme={theme}>
@@ -136,7 +146,7 @@ class Upload extends Component {
                                     multiple
                                     type="file"
                                 />
-                                <label htmlFor="raised-button-file">
+                                <label htmlFor="raised-button-file" onChange={this.handleChange}>
                                     <Button variant="raised" size="small" component="span" color="primary" id="upload-button">
                                         Upload
                                     </Button>
@@ -144,9 +154,11 @@ class Upload extends Component {
                             </div>
 
                             <div id="post-wrapper">
-                                <Button variant="raised" size="small" component="span" color="primary" id="post-button">
-                                    Post
-                                </Button>
+                                <label>
+                                    <Button variant="raised" size="small" component="span" color="primary" id="post-button">
+                                        Post
+                                    </Button>
+                                </label>
                             </div>
                         </FormGroup>
                     </Form>
@@ -158,9 +170,7 @@ class Upload extends Component {
     render() {
         return (
             <div className="upload">
-
                 {this.renderForm()}
-
             </div>
         )
     }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './NavigationBar.css';
-import NavDropdown from './NavDropdown.js'
+import NavDropdown from './NavDropdown.js';
+import { Link } from "react-router-dom";
 
 class NavigationBar extends Component {
 	render() {
@@ -12,7 +13,7 @@ class NavigationBar extends Component {
 						<a className="dropdown-item" href="/">settings</a>
 					</NavDropdown>
 
-        			<a className="navbar-brand" href="/">#trashtag</a>
+        			<Link to="/feed" className="navbar-brand" >#trashtag</Link>
 
         			<form className="form-inline my-2 my-lg-0">
             			<input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
