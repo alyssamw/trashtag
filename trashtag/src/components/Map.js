@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import GCP_KEY from '../../config.js'
 
 const SimpleComponent = ({ text }) => <div>{text}</div>;
 
 class Map extends Component {
     static defaultProps = {
         text: "LAHacks",
-        center: {
-          lat: 34.0689,
-          lng: 118.4452
-        },
         zoom: 11
     };
     render() {
@@ -17,8 +14,8 @@ class Map extends Component {
           // Important! Always set the container height explicitly
           <div style={{ height: '100vh', width: '100%' }}>
             <GoogleMapReact
-              bootstrapURLKeys={{ key: "AIzaSyDU40XGqr3SR80ECP0POFrKL9WNZmHzhO0" }}
-              defaultCenter={this.props.center}
+              bootstrapURLKeys={{ key: GCP_KEY }}
+              center={this.props.center}
               defaultZoom={this.props.zoom}
             >
               <SimpleComponent
