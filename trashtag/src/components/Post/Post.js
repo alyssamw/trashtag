@@ -16,11 +16,11 @@ class Post extends Component {
             <div className="post-wrapper">
                 <div className="Post">
                     <div className="location">
-                        <p>{this.state.location}</p>
+                        <p className="location-text">{this.state.location}</p>
                     </div>
                     <div className="content">
                         <div className="caption">
-                            <p>{this.state.caption}</p>
+                            <p className="caption-text">{this.state.caption}</p>
                         </div>
                         <div className="photo"></div>
                     </div>

@@ -3,7 +3,7 @@
     box-shadow: 0px 4px 4px rgba(0,0,0,0.25), 0px 4px 4px rgba(0,0,0,0.25);
     width: 45vw;
     height: 35vw;
-    margin: 2vw auto;
+    margin: 2vw 3vw;
     border-radius: 10px;
     font-size: 11pt;
     text-align: left;
@@ -23,8 +23,9 @@
     position: absolute;
 }
 
-.location p {
-    padding: 15px;
+.location-text {
+    padding: 0 15px;
+    margin:0;
 }
 
 .content {
@@ -49,7 +50,7 @@
     
 }
 
-.caption p {
+.caption-text {
     padding: 0 15px;
     width: 100%;
     height: 80%;
@@ -80,10 +81,10 @@
 
 @media only screen and (max-width: 860px) {
     .location {
-        font-size: 1.6vw;
+        font-size: 1.4vw;
     }
     .caption p {
         overflow: hidden;
-        font-size: 1.6vw;
+        font-size: 1.4vw;
     }
 }

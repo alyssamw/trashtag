@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import './NavigationBar.css';
 import NavDropdown from './NavDropdown.js'
 

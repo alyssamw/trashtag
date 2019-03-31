@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import Home from './pages/Home/Home'
-import Map from './components/Map.js';
-import Post from './components/Post/Post';
 import Feed from './pages/Feed/Feed';
 import './App.css';
 
