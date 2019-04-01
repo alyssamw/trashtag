@@ -55,9 +55,7 @@ class Feed extends Component {
                     .limitToLast(5)
                     .once('value')
                     .then((snapshot) => {
-                        let arrayOfKeys = Object.keys(snapshot.val())
-                            .sort()
-                            .reverse();
+                        let arrayOfKeys = Object.keys(snapshot.val()).sort().reverse();
                         let results = arrayOfKeys.map((key) => snapshot.val()[key]);
                         referenceToOldestKey = arrayOfKeys[arrayOfKeys.length - 1];
                         this.setState({
@@ -85,7 +83,7 @@ class Feed extends Component {
                     .limitToLast(6)
                     .once('value')
                     .then((snapshot) => {
-                        let arrayOfKeys = Object.keys(snapshot.val()).sort().reverse().slice(1);
+                        let arrayOfKeys = Object.keys(snapshot.val()).sort().slice(1);
                         let results = arrayOfKeys.map((key) => snapshot.val()[key]);
                         referenceToOldestKey = arrayOfKeys[arrayOfKeys.length - 1];
                         this.setState({
@@ -126,7 +124,7 @@ class Feed extends Component {
                         key={i}
                         location={singlePost.location}
                         caption={singlePost.caption}
-                        photo={"trash" + (i + 1)}
+                        url={singlePost.url}
                     />
                 )}
 

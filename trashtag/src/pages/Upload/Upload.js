@@ -11,6 +11,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import theme from './theme';
+import {storage, firebaseApp} from '../../base';
 
 class Upload extends Component {
     constructor(props) {
@@ -23,11 +24,13 @@ class Upload extends Component {
             },
             locationHelper: "",
             image: null,
-            url: ''
+            location: null,
+            caption: null,
         };
         this.initMap = this.initMap.bind(this);
         this.initMap();
         this.handleChange = this.handleChange.bind(this);
+        this.handleUpload = this.handleUpload.bind(this);
     }
 
     componentDidMount = () => {
@@ -106,9 +109,39 @@ class Upload extends Component {
 
     handleChange = e => {
         if (e.target.files[0]) {
-            const image = this.target.files[0];
+            const image = e.target.files[0];
             this.setState(() => ({image}));
         }
+    }
+
+    handleUpload = () => {
+        const {image,location,caption} = this.state;
+        if (!image) {
+            return;
+        }
+        const uploadTask = storage.ref('images/' + image.name).put(image);
+        uploadTask.on('state_changed', 
+        (snapshot) => {
+        }, 
+        (error) => {
+            console.log(error);
+        }, 
+        () => {
+            storage.ref('images').child(image.name).getDownloadURL().then(url => {
+                console.log(url);
+                firebaseApp.database().ref('numposts').once('value').then((snapshot) => {
+                    var numPosts = snapshot.val();
+                    firebaseApp.database().ref('posts/' + numPosts).set({
+                        url, 
+                        caption,
+                        location
+                    });
+                    numPosts = numPosts+1;
+                    firebaseApp.database().ref('numposts').set(numPosts);
+                });
+            })
+            
+        });
     }
 
     renderForm = () => {
@@ -118,7 +151,13 @@ class Upload extends Component {
                     <Form>
                         <br />
                         <FormGroup row className="formRow" style={{ display: "flex", width: "100%" }}>
-                            <TextField id="address" placeholder="Manually type in location or... " style={{ width: "100%" }} />
+                            <TextField id="address" placeholder="Manually type in location or... " style={{ width: "100%" }} 
+                                onChange={ e => {
+                                    this.setState({
+                                        location:e.target.value
+                                    })
+                                }} 
+                            />
                             <FormControlLabel
                                 control={
                                     <Checkbox
@@ -132,7 +171,13 @@ class Upload extends Component {
                             />
                         </FormGroup>
                         <FormGroup>
-                            <TextField id="description" variant="outlined" multiline="true" rows="3" placeholder="Please give a short description about the area in need of beautification." style={{ width: "100%" }} />
+                            <TextField id="description" variant="outlined" multiline="true" rows="3" 
+                                onChange={ e => {
+                                    this.setState({
+                                        caption:e.target.value
+                                    })
+                                }} 
+                                placeholder="Please give a short description about the area in need of beautification." style={{ width: "100%" }} />
                         </FormGroup>
                         <br />
                         <FormGroup row className="formRow">
@@ -145,9 +190,11 @@ class Upload extends Component {
                                     id="raised-button-file"
                                     multiple
                                     type="file"
+                                    onChange={this.handleChange}
                                 />
-                                <label htmlFor="raised-button-file" onChange={this.handleChange}>
-                                    <Button variant="raised" size="small" component="span" color="primary" id="upload-button">
+                                <label htmlFor="raised-button-file" >
+                                    <Button variant="raised" size="small" 
+                                        component="span" color="primary" id="upload-button">
                                         Upload
                                     </Button>
                                 </label>
@@ -155,7 +202,9 @@ class Upload extends Component {
 
                             <div id="post-wrapper">
                                 <label>
-                                    <Button variant="raised" size="small" component="span" color="primary" id="post-button">
+                                    <Button variant="raised" size="small" 
+                                    component="span" color="primary" id="post-button"
+                                    onClick={this.handleUpload}>
                                         Post
                                     </Button>
                                 </label>

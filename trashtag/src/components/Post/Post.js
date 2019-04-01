@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import './Post.css';
 import like from '../../like.png';
-import trash1 from '../../trash1.jpg';
-import trash2 from '../../trash2.jpg';
-import trash3 from '../../trash3.jpg';
-import trash4 from '../../trash4.jpg';
-import trash5 from '../../trash5.jpg';
 
 class Post extends Component {
     constructor(props) {
@@ -13,7 +8,7 @@ class Post extends Component {
         this.state = {
             location: props.location,
             caption: props.caption,
-            photo: props.photo,
+            url: props.url,
         }
     }
     render() {
@@ -29,7 +24,7 @@ class Post extends Component {
                             <p className="caption-text">{this.state.caption}</p>
                         </div>
                         <div className="photo-wrapper">
-                            <img src={trash4} alt="Trash" className="photo" />
+                            <img src={this.state.url} alt="Trash" className="photo" />
                         </div>
                     </div>
                     <div className="likes">
