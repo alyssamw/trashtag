@@ -33,7 +33,7 @@ class PostContainer extends Component {
 
             /* Check that page is not at bottom. */
             if (window.innerheight + document.documentElement.scrollTop === document.documentElement.offsetheight) {
-                this.loadPosts();
+                loadPosts();
             }
         };
     }
