@@ -142,6 +142,10 @@ class Upload extends Component {
             })
             
         });
+        setTimeout(()=>{
+            this.props.onUpload(1);
+        },2000)
+        
     }
 
     renderForm = () => {
